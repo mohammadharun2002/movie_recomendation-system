@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Movie Recommender</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <div class="bg"></div>
+
+  <header class="header">
+    <div class="wrap">
+      <div class="brand">
+        <div class="logo">🎬</div>
+        <div>
+          <h1>Movie Recommender</h1>
+          <p>Search one movie → get 10 similar recommendations instantly.</p>
+        </div>
+      </div>
+
+      <div class="searchCard">
+        <div class="searchRow">
+          <input id="movieInput" type="text" placeholder="Try: Avatar, Inception, Interstellar..." autocomplete="off" />
+          <button id="searchBtn">Recommend</button>
+        </div>
+        <div class="hint">
+          Tip: Use exact movie names from your dataset (case-insensitive).
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="wrap">
+      <section class="status">
+        <div id="statusText" class="statusText">Ready.</div>
+        <div id="chip" class="chip hidden"></div>
+      </section>
+
+      <section>
+        <div id="grid" class="grid"></div>
+      </section>
+
+      <footer class="footer">
+        <span>Built with Flask + ML</span>
+        <span>•</span>
+        <span id="year"></span>
+      </footer>
+    </div>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
